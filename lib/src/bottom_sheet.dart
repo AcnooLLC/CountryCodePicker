@@ -65,8 +65,7 @@ class _SelectionBottomSheetState extends State<SelectionBottomSheet> {
         child: Container(
           clipBehavior: Clip.hardEdge,
           width: widget.size?.width ?? MediaQuery.of(context).size.width,
-          height:
-              widget.size?.height ?? MediaQuery.of(context).size.height * 0.85,
+          height: widget.size?.height ?? MediaQuery.of(context).size.height * 0.85,
           decoration: widget.boxDecoration ??
               BoxDecoration(
                 color: widget.backgroundColor ?? Colors.white,
@@ -149,8 +148,7 @@ class _SelectionBottomSheetState extends State<SelectionBottomSheet> {
               child: Container(
                 margin: const EdgeInsets.only(right: 16.0),
                 decoration: widget.flagDecoration,
-                clipBehavior:
-                    widget.flagDecoration == null ? Clip.none : Clip.hardEdge,
+                clipBehavior: widget.flagDecoration == null ? Clip.none : Clip.hardEdge,
                 child: Image.asset(
                   e.flagUri!,
                   package: 'country_code_picker',
@@ -161,9 +159,7 @@ class _SelectionBottomSheetState extends State<SelectionBottomSheet> {
           Expanded(
             flex: 4,
             child: Text(
-              widget.showCountryOnly!
-                  ? e.toCountryStringOnly()
-                  : e.toLongString(),
+              widget.showCountryOnly! ? e.toCountryStringOnly() : e.toLongString(),
               overflow: TextOverflow.fade,
               style: widget.textStyle,
             ),
@@ -179,8 +175,7 @@ class _SelectionBottomSheetState extends State<SelectionBottomSheet> {
     }
 
     return Center(
-      child: Text(CountryLocalizations.of(context)?.translate('no_country') ??
-          'No country found'),
+      child: Text(CountryLocalizations.of(context)?.translate('no_country') ?? 'No country found'),
     );
   }
 
@@ -194,10 +189,7 @@ class _SelectionBottomSheetState extends State<SelectionBottomSheet> {
     s = s.toUpperCase();
     setState(() {
       filteredElements = widget.elements
-          .where((e) =>
-              e.code!.contains(s) ||
-              e.dialCode!.contains(s) ||
-              e.name!.toUpperCase().contains(s))
+          .where((e) => e.code!.contains(s) || e.dialCode!.contains(s) || e.name!.toUpperCase().contains(s))
           .toList();
     });
   }
