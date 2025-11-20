@@ -7,3 +7,6 @@ packages
 .vscode
 *.lock
 .dart_tool/
+
+# FVM Version Cache
+.fvm/
